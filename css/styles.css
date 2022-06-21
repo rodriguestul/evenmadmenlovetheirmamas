@@ -546,6 +546,22 @@ body {
 
 .ficha {
   margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.nn4n {
+  display: none;
+  position: absolute;
+  max-height: 15rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 99;
+}
+
+.names:hover > img {
+  display: inline;
 }
 
 .social {
