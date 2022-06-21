@@ -1,0 +1,466 @@
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+:root {
+  /* colors */
+  --clr-primary: #eeeeee;
+
+  /* font-sizes */
+  --fs-headline: 1.8rem;
+  --fs-big: 1.2rem;
+  --fs-medium: 1.125rem;
+  --fs-text: 0.875rem;
+  --fs-small: 0.75rem;
+
+  /* font-family */
+  --ff-sans: "NeueHaasGroteskText Pro Md", sans-serif;
+
+  /* spacer */
+  --padding: 10px;
+}
+
+::selection {
+  background: lightgray;
+}
+
+/* typography */
+
+.fs-headline {
+  font-size: var(--fs-headline);
+}
+
+.fs-headline {
+  font-size: var(--fs-headline);
+}
+
+.fs-big {
+  font-size: var(--fs-big);
+}
+
+.fs-medium {
+  font-size: var(--fs-medium);
+}
+
+.fs-text {
+  font-size: var(--fs-text);
+}
+
+.fs-small {
+  font-size: var(--fs-small);
+}
+
+.fw-regular {
+  font-weight: 400;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fs-italic {
+  font-style: italic;
+}
+
+.txt-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+}
+
+/* general */
+
+.x {
+  display: flex;
+  gap: var(--gap);
+}
+
+.xjb {
+  display: flex;
+  gap: var(--gap, 1.25rem);
+  justify-content: space-between;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1em);
+}
+
+.fix {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------- */
+/* homepage styles     */
+/* ------------------- */
+
+body {
+  background-color: var(--clr-primary);
+  font-family: "Neue Haas Grotesk ";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+
+  flex-direction: column;
+}
+
+.header {
+  width: 100vw;
+  padding: var(--padding);
+  padding-bottom: 0;
+  z-index: 99;
+}
+
+.menu-item {
+  margin-right: 0.2em;
+}
+
+.menu-item a:hover {
+  text-decoration: underline;
+}
+
+.menu-item.active {
+  text-decoration: underline;
+}
+
+.container {
+  margin-inline: auto;
+  width: 60%;
+  max-width: 75rem;
+
+  --gap: 2.5rem;
+}
+
+.col {
+  margin-block: 3em;
+  flex: 1;
+}
+
+.screen-space {
+  height: 100vh;
+  width: 100vw;
+}
+
+.screen-space__narrow {
+  height: 80vh;
+  width: 100vw;
+}
+
+.scroll-bar__space {
+  margin-right: 0.8vw;
+}
+
+.masks-container {
+  margin-left: 35vw;
+
+  flex-grow: 1;
+  align-items: center;
+}
+
+.mask {
+  cursor: pointer;
+  animation: appear 2s forwards;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.m-one {
+  height: 75vh;
+  margin-right: 15vw;
+}
+
+.m-two {
+  height: 85vh;
+  margin-bottom: 5vh;
+  margin-right: 10vw;
+}
+
+.m-three {
+  height: 82vh;
+  margin-right: 10vw;
+}
+
+.m-four {
+  height: 82vh;
+}
+
+/* ------------------- */
+/*       filme         */
+/* ------------------- */
+
+.black-back {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: black;
+  animation: fade-in 500ms forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header.whiten {
+  animation: whiten 500ms forwards;
+}
+
+@keyframes whiten {
+  0% {
+    color: black;
+  }
+  100% {
+    color: var(--clr-primary);
+  }
+}
+
+.info-container {
+  padding-left: var(--padding);
+  animation: whiten 500ms forwards;
+}
+
+.info-btn {
+  background: none;
+  color: inherit;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+
+  position: absolute;
+  margin-top: 3em;
+}
+
+.filme-description {
+  position: absolute;
+  width: 100%;
+  transition: 500ms forwards;
+  visibility: hidden;
+}
+
+.filme-description.visible {
+  visibility: visible;
+}
+
+.filme-container {
+  position: absolute;
+  padding-inline: var(--padding);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.filme {
+  width: 100%;
+  color: var(--clr-primary);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.7;
+
+  transition: 500ms forwards;
+  visibility: hidden;
+}
+
+.overlay.visible {
+  visibility: visible;
+}
+
+/* ------------------- */
+/*  série fotográfica  */
+/* ------------------- */
+
+.serie-container {
+  margin-left: 20%;
+
+  flex-grow: 1;
+  align-items: center;
+  --gap: 2.5rem;
+}
+
+.serie-img {
+  width: 30vw;
+  object-fit: contain;
+}
+
+/* ------------------- */
+/*    project room     */
+/* ------------------- */
+
+.room-photos {
+  position: absolute;
+  inset: 0;
+}
+
+.room-photos__section {
+  position: relative;
+}
+
+.room-photos__section:first-of-type {
+  height: 85vh;
+}
+
+.room-photos__section + .room-photos__section {
+  height: 100vh;
+}
+
+.room-photos__section > * {
+  z-index: 10;
+}
+
+.photo-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 2rem;
+  height: 40vh;
+}
+
+.photo-2 {
+  margin: 0 0 25vh 2rem;
+}
+
+.photo-3 {
+  margin-left: auto;
+}
+
+.photo-4 {
+  margin: 32vh 2rem 32vh auto;
+}
+
+.photo-5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  height: 80vh;
+}
+
+.photo-6 {
+  object-fit: cover;
+  height: 60vh;
+  width: 100%;
+}
+
+.photo-7 {
+  margin-left: 2rem;
+}
+
+.photo-8 {
+  margin-left: 30%;
+  margin-block: 15vh;
+}
+
+.photo-9 {
+  margin: 15vh 2rem 15vh auto;
+}
+
+.photo-10 {
+  margin: 15vh auto 15vh auto;
+}
+
+/* ------------------- */
+/*        sobre        */
+/* ------------------- */
+
+.fake-header {
+  opacity: 0;
+}
+
+.box {
+  width: 100vw;
+  height: 3.1em;
+  background: var(--clr-primary);
+}
+
+.gradient {
+  width: 100vw;
+  height: 1.5em;
+  background: rgb(238, 238, 238);
+  background: linear-gradient(0deg, rgba(238, 238, 238, 0) 0%, rgb(238, 238, 238) 100%);
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.box-bottom {
+  width: 100vw;
+  height: 2.1em;
+  background: var(--clr-primary);
+}
+
+.gradient-bottom {
+  width: 100vw;
+  height: 1.5em;
+  background: rgb(238, 238, 238);
+  background: linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, rgb(238, 238, 238) 100%);
+}
+
+.ficha {
+  margin-top: 2em;
+}
+
+.teaser {
+  max-width: calc(30% - 2.5rem);
+}
+
+/* ------------------- */
+/*      disorders      */
+/* ------------------- */
+
+.titulo {
+  text-decoration: underline;
+  line-height: 1.7;
+}
+
+.media-col {
+  justify-content: center;
+}
+
+.media-container {
+  max-width: calc(30% - 2.5rem);
+}
+
+.mask-small {
+  max-height: 50vh;
+}
