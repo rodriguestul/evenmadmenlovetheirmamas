@@ -65,15 +65,79 @@
             3.º ano Design de Comunicação VI 2021/22
           </p>
         </div>
-        <div class="col flow">
+        <div class="col">
           <video class="teaser fix" autoplay controls muted poster="img/filme/thumb.jpg">
             <source src="img/sobre/teaser.mp4#t=03,31" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+          <div class="slider">
+            <ul class="slider__track">
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_005835.jpg" alt="" />
+              </li>
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_005906.jpg" alt="" />
+              </li>
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_010002.jpg" alt="" />
+              </li>
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_010025.jpg" alt="" />
+              </li>
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_010115_1.jpg" alt="" />
+              </li>
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_010225.jpg" alt="" />
+              </li>
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_010246.jpg" alt="" />
+              </li>
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_010259.jpg" alt="" />
+              </li>
+              <li class="slides-1">
+                <img class="slide__img" src="img/sobre/slider/IMG_20220621_010339.jpg" alt="" />
+              </li>
+            </ul>
+            <button class="slider__button--left" onclick="plusSlides(-1)">
+              <div class="slider__arrow--left"></div>
+            </button>
+            <button class="slider__button--right" onclick="plusSlides(1)">
+              <div class="slider__arrow--right"></div>
+            </button>
+          </div>
         </div>
       </div>
     </main>
 
-    <script src="js/script.js"></script>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides-1");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+      }
+    </script>
   </body>
 </html>
