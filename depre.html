@@ -95,7 +95,7 @@
         </div>
         <div class="col flow x media-col">
           <div class="media-container fix">
-            <img src="img/gifs/depre.gif" alt="" class="mask-small" />
+            <img id="maska" src="img/gifs/depre.gif" alt="" class="mask-small" />
           </div>
         </div>
       </div>
@@ -106,6 +106,18 @@
       </div>
     </main>
 
-    <script src="js/script.js"></script>
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+          document.getElementById("maska").style.opacity = "0";
+        } else {
+          document.getElementById("maska").style.opacity = "1";
+        }
+      }
+    </script>
   </body>
 </html>

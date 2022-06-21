@@ -237,21 +237,46 @@ body {
 .m-one {
   height: 70vh;
   margin-right: 15vw;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
+}
+
+.m-one:hover {
+  height: 75vh;
 }
 
 .m-two {
   height: 80vh;
   margin-bottom: 5vh;
   margin-right: 12vw;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
+}
+
+.m-two:hover {
+  height: 85vh;
 }
 
 .m-three {
   height: 77vh;
   margin-right: 12vw;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
 }
 
 .m-four {
   height: 77vh;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
+}
+
+.m-three:hover,
+.m-four:hover {
+  height: 82vh;
 }
 
 /* ------------------- */
@@ -495,8 +520,8 @@ body {
   width: 100vw;
   height: 1.5em;
   background: rgb(238, 238, 238);
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(238, 238, 238, 0)), to(rgb(238, 238, 238)));
   background: -o-linear-gradient(bottom, rgba(238, 238, 238, 0) 0%, rgb(238, 238, 238) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(238, 238, 238, 0)), to(rgb(238, 238, 238)));
   background: linear-gradient(0deg, rgba(238, 238, 238, 0) 0%, rgb(238, 238, 238) 100%);
 }
 
@@ -514,13 +539,19 @@ body {
   width: 100vw;
   height: 1.5em;
   background: rgb(238, 238, 238);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 0)), to(rgb(238, 238, 238)));
   background: -o-linear-gradient(top, rgba(238, 238, 238, 0) 0%, rgb(238, 238, 238) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 0)), to(rgb(238, 238, 238)));
   background: linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, rgb(238, 238, 238) 100%);
 }
 
 .ficha {
   margin-top: 2em;
+}
+
+.social {
+  width: 2em;
+  aspect-ratio: 1;
+  margin-top: 1em;
 }
 
 .teaser {
@@ -546,7 +577,7 @@ body {
 
 .slide__img {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/11;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -615,6 +646,10 @@ body {
   padding-right: 0.75rem;
 }
 
+.book-link {
+  text-decoration: underline;
+}
+
 /* ------------------- */
 /*      disorders      */
 /* ------------------- */
@@ -635,5 +670,5 @@ body {
 }
 
 .mask-small {
-  max-height: 50vh;
+  max-height: 55vh;
 }
